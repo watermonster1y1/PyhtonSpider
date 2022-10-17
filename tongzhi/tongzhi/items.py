@@ -7,12 +7,6 @@ import scrapy
 
 
 class TongzhiItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    # 通知标题
-    title = scrapy.Field()
-    # 通知链接
     link = scrapy.Field()
-    # 通知发布时间
+    title = scrapy.Field()
     time = scrapy.Field()
-    pass
