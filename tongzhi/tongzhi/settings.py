@@ -60,6 +60,13 @@ NEWSPIDER_MODULE = 'tongzhi.spiders'
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
+DB_HOST = '123.60.211.16'
+DB_PORT = 3306
+DB_USER = 'root'
+DB_PASSWORD = 'daybreak1!'
+DB_NAME = 'spider_tongzhi'
+DB_CHARSET = 'utf-8'
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
