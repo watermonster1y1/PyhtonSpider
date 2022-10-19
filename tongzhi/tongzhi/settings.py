@@ -65,12 +65,13 @@ DB_PORT = 3306
 DB_USER = 'root'
 DB_PASSWORD = 'daybreak1!'
 DB_NAME = 'spider_tongzhi'
-DB_CHARSET = 'utf-8'
+DB_CHARSET = 'utf8'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'tongzhi.pipelines.TongzhiPipeline': 1,
+    'tongzhi.pipelines.MysqlPipeline': 2,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
