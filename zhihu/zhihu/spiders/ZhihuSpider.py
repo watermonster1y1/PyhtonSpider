@@ -1,9 +1,27 @@
 import scrapy
 import json
+from zhihu.items import ZhihuItem
 
 class ZhihuspiderSpider(scrapy.Spider):
     name = 'ZhihuSpider'
     allowed_domains = ['www.zhihu.com']
-    start_urls = ['https://www.zhihu.com/api/v4/creators/rank/hot?domain=0&limit=100&offset=0&period=hour']
+    start_urls = ['https://www.zhihu.com/api/v4/creators/rank/hot?domain=0&limit=103&offset=0&period=hour']
     def parse(self, response):
-        data = json.loads(response.text)
+        tmp = json.loads(response.text)
+        data = tmp['data']
+        # with open('test.txt','a',encoding = 'utf-8') as fp:
+        #     fp.write(str(data))
+        for i in range(len(data)):
+            link = data[i]['question']['url']
+            title = data[i]['question']['title']
+            value = data[i]['reaction']['score']
+            tag = []
+            for j in data[i]['question']['topics']:
+                tag.append(j['name'])
+            # with open('test.txt','a',encoding = 'utf-8') as fp:
+            #     fp.write(str(link)+'\n')
+            #     fp.write(str(title)+'\n')
+            #     fp.write(str(value)+'\n')
+            #     fp.write(str(tag)+'\n')
+            res = ZhihuItem(link = link, title = title, value = value, tag = str(tag))
+            yield res

@@ -60,11 +60,19 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
+DB_HOST = '123.60.211.16'
+DB_PORT = 3306
+DB_USER = 'root'
+DB_PASSWORD = 'daybreak1!'
+DB_NAME = 'spider_zhihu'
+DB_CHARSET = 'utf8'
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zhihu.pipelines.ZhihuPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    #'zhihu.pipelines.ZhihuPipeline': 1,
+    'zhihu.pipelines.MysqlPipeline': 1,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

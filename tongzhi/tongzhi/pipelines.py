@@ -59,4 +59,3 @@ class MysqlPipeline:
     def close_spider(self, spider):
         self.cursor.close()
         self.conn.close()
-        pass

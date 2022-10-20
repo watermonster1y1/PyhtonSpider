@@ -70,8 +70,8 @@ DB_CHARSET = 'utf8'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'tongzhi.pipelines.TongzhiPipeline': 1,
-    'tongzhi.pipelines.MysqlPipeline': 2,
+    #'tongzhi.pipelines.TongzhiPipeline': 1,
+    'tongzhi.pipelines.MysqlPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
