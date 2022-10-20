@@ -20,13 +20,6 @@ class TongzhispiderSpider(scrapy.Spider):
             title = info.xpath('./div[@style = "float:left"]/a/text()').extract_first()
             # 获取时间
             time = info.xpath('./div[@style = "float:right;"]/text()').extract_first()
-            with open('data.txt','a',encoding='utf-8') as fp:
-                fp.write(str(link))
-                fp.write('\n')
-                fp.write(title)
-                fp.write('\n')
-                fp.write(str(time))
-                fp.write('\n')
             data = TongzhiItem(link = link, title = title, time = time)
             yield data
         # 爬取下一页

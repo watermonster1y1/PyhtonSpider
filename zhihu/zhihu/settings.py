@@ -63,7 +63,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 DB_HOST = '123.60.211.16'
 DB_PORT = 3306
 DB_USER = 'root'
-DB_PASSWORD = 'daybreak1!'
+DB_PASSWORD = ''
 DB_NAME = 'spider_zhihu'
 DB_CHARSET = 'utf8'
 
